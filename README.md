@@ -47,13 +47,13 @@ pip install -r requirements.txt
 - `engine/`: Core logic (Descriptors, Rules, Search, Enumeration).
 - `data/`: Input/Output storage.
 
-## 🧪 Case Study: Real-World PubChem Validation
-To demonstrate the engine's capability on **Live Data**, we dynamically fetched **500 Investigational Drugs** directly from the **PubChem Database** (via PUG REST API).
+## 🧪 Case Study: Live PubChem Validation (600 Compounds)
+To demonstrate the engine's capability on **Live Data**, we dynamically fetched **600 Investigational Drugs** directly from the **PubChem Database** (via PUG REST API).
 
 **Performance Stats:**
-- **Source**: PubChem Live Fetch (`term="drug"`)
-- **Dataset Size**: 500 Real-World Compounds
-- **Processing Time**: ~4.5 seconds
+- **Source**: PubChem Live Fetch (`term="pharmaceutical"`)
+- **Dataset Size**: 600 Real-World Compounds
+- **Processing Time**: ~8 seconds
 
 **Key Findings:**
 1.  **Market Drug Profiling**:

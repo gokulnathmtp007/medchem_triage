@@ -41,7 +41,9 @@ def fetch_pubchem_compounds(term="investigational[Filter]", max_records=500, out
                 r_sdf = requests.get(pug_url)
                 if r_sdf.status_code == 200:
                     f_out.write(r_sdf.text)
-                    print(f"   Downloaded batch {i//batch_size + 1}/{(len(cids)//batch_size)+1}")
+                    if not r_sdf.text.endswith("\n"):
+                        f_out.write("\n")
+                    print(f"   Downloaded batch {i//batch_size + 1}/{(len(cids)//batch_size)+1} (Size: {len(r_sdf.text)} bytes)")
                 else:
                     print(f"   ⚠️ Failed batch {i}: {r_sdf.status_code}")
                 
@@ -56,4 +58,4 @@ if __name__ == "__main__":
     if not os.path.exists("data/raw"):
         os.makedirs("data/raw")
     # Using a broad filter to get diverse real chemistry
-    fetch_pubchem_compounds(term="drug", max_records=500)
+    fetch_pubchem_compounds(term="pharmaceutical", max_records=600)
