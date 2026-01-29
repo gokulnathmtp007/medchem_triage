@@ -66,6 +66,13 @@ def run_pipeline(sdf_path):
         print("No valid molecules processed.")
         return df
         
+    # Remove duplicates (Same structure)
+    # RDKit SMILES are canonical, so this works well.
+    initial_count = len(df)
+    df = df.drop_duplicates(subset=["SMILES"])
+    if len(df) < initial_count:
+        print(f"Removed {initial_count - len(df)} duplicate compounds.")
+        
     # 4. Rank Compounds
     # Logic: Prioritize SAFE-ROBUST, then SAFE-FRAGILE, then FAIL.
     # Within each tier, rank by Min_Margin (higher is better).
