@@ -1,5 +1,7 @@
 # MedChem Triage Engine 💊
 
+![Dashboard Preview](medchem_dashboard_preview.png)
+
 A local, secure, and free **Medicinal Chemistry Decision-Support Platform**. 
 This tool allows chemists to filter, analyze, and design small molecules using industry-standard ADME constraints, without sending data to the cloud.
 
