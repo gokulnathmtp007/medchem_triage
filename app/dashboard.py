@@ -116,6 +116,10 @@ project_root = os.path.dirname(script_dir)
 default_path = os.path.join(project_root, "data", "processed", "results.csv")
 input_file = st.sidebar.text_input("Path to Results CSV", value=default_path)
 
+if st.sidebar.button("🔄 Reload Data"):
+    st.cache_data.clear()
+    st.rerun()
+
 df_main = pd.DataFrame()
 if input_file and os.path.exists(input_file):
     df_main = load_data(input_file)
