@@ -1,0 +1,12 @@
+streamlit
+pandas
+plotly
+rdkit
+scikit-learn
+openpyxl
+fpdf
+streamlit-ketcher
+numpy
+iprot
+ipywidgets
+matplotlib
